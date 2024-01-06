@@ -21,7 +21,7 @@ mongoose.connect("mongodb+srv://komalprajapat267:1SqXaaRyOH1STqSt@komal.fjcbbzw.
 
 app.get('/', (req, res) => {
     console.log("This is home Route");
-    res.send("********Hello to home route*********"); 
+    res.send("<h1><center>********WELCOME*********</h1></center>"); 
 }); 
 
 app.use("/api",MovieRouter)
