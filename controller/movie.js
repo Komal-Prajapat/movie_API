@@ -6,15 +6,16 @@ import {Movie} from '../Modle/movie.js'
 export const addmovie= async(req,res)=>{
  
 const title = req.body.title;
-// const genre = req.body.genre;
-// const releaseDate = req.body.releseDate;
-// const director = req.body.director;
-// const actors = req.body.actors;
-// const description = req.body.description;
-// const rating = req.body.rating;
-// const imgUrl = req.body.imgUrl;
-// const user = req.body.user;
-// const createdAt = req.body.createdAt;
+const genre = req.body.genre;
+const releaseDate = req.body.releseDate;
+const director = req.body.director;
+const actors = req.body.actors;
+const description = req.body.description;
+const rating = req.body.rating;
+const imgUrl = req.body.imgUrl;
+
+
+
 
   let movie = await Movie.findOne({ title });
   
@@ -22,14 +23,16 @@ const title = req.body.title;
     return res.json({ message: " Movie Already Exist..!" });
 
   movie = await Movie.create({
-   title
-  //   , genre , releaseDate ,director , actors,description
-  //  ,rating,imgUrl,user,createdAt
+   title    , genre , releaseDate ,director , actors,description
+   ,rating,imgUrl
   });
 
   res.json({ message: "movie Saved..!" });
 };
 
+
+
+// getmovie
  export const getmovie = async (req, res) => {
   const movies = await Movie.find();
 
